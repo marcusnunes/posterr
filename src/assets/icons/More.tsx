@@ -1,5 +1,5 @@
 import React from 'react';
-import { TIcon } from '../../types/TIcon';
+import { TIcon } from '@/types/TIcon';
 
 export default function SvgComponent(props: TIcon) {
   return (
