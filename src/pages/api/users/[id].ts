@@ -6,7 +6,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<TUser | {}>
 ) {
-  const { id } = req.query
+  const { id } = req.query;
   
   const data = mockUsers.find((item) => item.username === id) || {};
 
