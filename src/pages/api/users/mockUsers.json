@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "username": "marcus",
+    "photo": "https://randomuser.me/api/portraits/men/46.jpg",
+    "followers": 10,
+    "following": 5,
+    "posts": 1,
+    "createdAt": "2022-01-05"
+  },
+  {
+    "id": 2,
+    "username": "anna",
+    "photo": "https://randomuser.me/api/portraits/women/79.jpg",
+    "followers": 0,
+    "following": 0,
+    "posts": 0,
+    "createdAt": "2022-01-05"
+  },
+  {
+    "id": 3,
+    "username": "sarah",
+    "photo": "https://randomuser.me/api/portraits/women/76.jpg",
+    "followers": 0,
+    "following": 0,
+    "posts": 0,
+    "createdAt": "2022-01-06"
+  },
+  {
+    "id": 4,
+    "username": "alexa",
+    "photo": "https://randomuser.me/api/portraits/women/45.jpg",
+    "followers": 0,
+    "following": 0,
+    "posts": 0,
+    "createdAt": "2022-01-07"
+  },
+  {
+    "id": 5,
+    "username": "john",
+    "photo": "https://randomuser.me/api/portraits/men/27.jpg",
+    "followers": 0,
+    "following": 0,
+    "posts": 0,
+    "createdAt": "2022-01-08"
+  },
+  {
+    "id": 6,
+    "username": "sabrina",
+    "photo": "https://randomuser.me/api/portraits/women/17.jpg",
+    "followers": 10,
+    "following": 5,
+    "posts": 0,
+    "createdAt": "2022-01-09"
+  },
+  {
+    "id": 7,
+    "username": "mike",
+    "photo": "https://randomuser.me/api/portraits/men/47.jpg",
+    "followers": 10,
+    "following": 5,
+    "posts": 0,
+    "createdAt": "2022-01-10"
+  },
+  {
+    "id": 8,
+    "username": "marcus",
+    "photo": "https://randomuser.me/api/portraits/men/86.jpg",
+    "followers": 0,
+    "following": 0,
+    "posts": 0,
+    "createdAt": "2022-01-11"
+  },
+  {
+    "id": 9,
+    "username": "kim",
+    "photo": "https://randomuser.me/api/portraits/women/21.jpg",
+    "followers": 0,
+    "following": 0,
+    "posts": 0,
+    "createdAt": "2022-01-12"
+  },
+  {
+    "id": 10,
+    "username": "marisa",
+    "photo": "https://randomuser.me/api/portraits/women/68.jpg",
+    "followers": 0,
+    "following": 0,
+    "posts": 0,
+    "createdAt": "2022-01-13"
+  }
+]

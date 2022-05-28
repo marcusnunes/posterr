@@ -1,0 +1,30 @@
+[
+  {
+    "id": 2,
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+    "createdAt": "2022-05-27",
+    "user": {
+      "id": 1,
+      "username": "marcus"
+    },
+    "retweetBy": null,
+    "replyingTo": null
+  },
+  {
+    "id": 1,
+    "text": "This is my first posterr",
+    "createdAt": "2022-05-01",
+    "user": {
+      "id": 1,
+      "username": "marcus"
+    },
+    "retweetBy": {
+      "id": 2,
+      "username": "anna"
+    },
+    "replyingTo": {
+      "id": 3,
+      "username": "sarah"
+    }
+  }
+]
