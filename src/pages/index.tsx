@@ -2,6 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import * as icons from '../assets/icons';
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +21,12 @@ const Home: NextPage = () => {
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.tsx</code>
+        </p>
+
+        <p>
+          {Object.values(icons).map((Value, index) => (
+            <Value key={index} width={32} height={32} color="#e73663" />
+          ))}
         </p>
 
         <div className={styles.grid}>
