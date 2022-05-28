@@ -3,8 +3,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import * as icons from '@/assets/icons';
+import useTranslation from 'next-translate/useTranslation';
 
 const Home: NextPage = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -16,6 +19,8 @@ const Home: NextPage = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
+          {' '}
+          {t('common:powered')}
         </h1>
 
         <p className={styles.description}>
