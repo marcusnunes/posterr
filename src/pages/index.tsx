@@ -5,6 +5,8 @@ import useTranslation from 'next-translate/useTranslation';
 import * as icons from '@/assets/icons';
 import * as S from './index.styles';
 
+import { Post } from '@/components';
+
 const Home: NextPage = () => {
   const { t } = useTranslation();
 
@@ -17,7 +19,31 @@ const Home: NextPage = () => {
       </Head>
 
       <S.Main>
+        <img src="/logo.png" width="127" height="30" alt="logo" />
+        
+
+        <div style={{ width: '500px', maxWidth: '400px' }}>
+          All / Following
+
+          <Post
+            text="This is my post!"
+            createdAt="2022-05-01T07:00:00"
+            username="anna"
+            photo="https://randomuser.me/api/portraits/women/79.jpg"
+          />
+          <Post
+            text="First Post here!"
+            createdAt="2022-05-01T07:00:00"
+            username="marcus"
+            photo="https://randomuser.me/api/portraits/men/27.jpg"
+          />
+        </div>
+
+        
         <S.TitleDemo>Hmmm</S.TitleDemo>
+
+        
+
         <S.Title>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
           {' '}

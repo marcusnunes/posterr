@@ -2,10 +2,11 @@
   {
     "id": 2,
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "createdAt": "2022-05-27",
+    "createdAt": "2022-05-01T07:00:00",
     "user": {
       "id": 2,
-      "username": "anna"
+      "username": "anna",
+      "photo": "https://randomuser.me/api/portraits/women/79.jpg"
     },
     "retweetBy": null,
     "replyingTo": null
@@ -13,10 +14,11 @@
   {
     "id": 1,
     "text": "This is my first posterr",
-    "createdAt": "2022-05-01",
+    "createdAt": "2022-05-01T06:00:00",
     "user": {
       "id": 1,
-      "username": "marcus"
+      "username": "marcus",
+      "photo": "https://randomuser.me/api/portraits/men/46.jpg"
     },
     "retweetBy": {
       "id": 2,
