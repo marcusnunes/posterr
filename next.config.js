@@ -6,6 +6,9 @@ const nextConfig = {
   ...nextTranslate(),
   reactStrictMode: true,
   poweredByHeader: false,
+  compiler: {
+    styledComponents: true,
+  },
 }
 
-module.exports = nextConfig
+module.exports = nextConfig;
