@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
 import * as icons from '@/assets/icons';
 import * as S from './index.styles';
@@ -19,7 +20,11 @@ const Home: NextPage = () => {
       </Head>
 
       <S.Main>
-        <img src="/logo.png" width="127" height="30" alt="logo" />
+        <Link href="/">
+          <a>
+            <img src="/logo.png" width="127" height="30" alt="logo" />
+          </a>
+        </Link>
         
 
         <div style={{ width: '500px', maxWidth: '400px' }}>
@@ -27,13 +32,13 @@ const Home: NextPage = () => {
 
           <Post
             text="This is my post!"
-            createdAt="2022-05-01T07:00:00"
+            createdAt="2022-05-29T07:00:00"
             username="anna"
             photo="https://randomuser.me/api/portraits/women/79.jpg"
           />
           <Post
             text="First Post here!"
-            createdAt="2022-05-01T07:00:00"
+            createdAt="2022-05-25T07:00:00"
             username="marcus"
             photo="https://randomuser.me/api/portraits/men/27.jpg"
           />
@@ -54,12 +59,6 @@ const Home: NextPage = () => {
           Get started by editing{' '}
           <S.Code>pages/index.tsx</S.Code>
         </S.Description>
-
-        <p>
-          {Object.values(icons).map((Value, index) => (
-            <Value key={index} width={32} height={32} color="#e73663" />
-          ))}
-        </p>
 
         <S.Grid>
           <S.Card href="https://nextjs.org/docs">

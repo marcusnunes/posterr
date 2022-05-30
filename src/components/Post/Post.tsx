@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { ActionButton } from '@/components';
+import { fromNow } from '@/utils/date';
 import {
   IconMore,
   IconComment,
@@ -21,61 +22,37 @@ type TPost = {
 export default function Post({ text, createdAt, username, photo }: TPost) {
   return (
     <S.Wrapper>
-     <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
+     <S.Container>
+        <Image src={photo} alt="photo" width="40" height="40" />
         
-        <Image src={photo} alt="photo" width="40" height="40" style={{ borderRadius: 30 }} />
-        
-        <div style={{ display: 'flex', flex: 1, marginLeft: 10 }}>
-          <div style={{ display: 'flex', flexDirection: 'column'}}>
-            <b>@{username}</b>
-            <S.Date>{createdAt}</S.Date>
+        <S.UserInfo>
+          <div>
+            <strong>@{username}</strong>
+            <span>{fromNow(createdAt)}</span>
           </div>
-        </div>
+        </S.UserInfo>
 
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <ActionButton
-            icon={<IconMore />}
-            action={() => null}
-          />
-        </div>
-      </div>
+        <S.UserActions>
+          <ActionButton icon={<IconMore />} action={() => null} />
+        </S.UserActions>
+      </S.Container>
 
-      <div style={{ padding: '16px 0' }}>
+      <S.Description>
         {text}
-      </div>
+      </S.Description>
 
-      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', }}>
-
+      <S.Footer>
         <S.ActionsLeft>
-          <ActionButton
-            icon={<IconComment />}
-            action={() => null}
-          />
-
-          <ActionButton
-            icon={<IconRepeat />}
-            action={() => null}
-          />
-
-          <ActionButton
-            icon={<IconHeart />}
-            action={() => null}
-          />
-
-          <ActionButton
-            icon={<IconShare />}
-            action={() => null}
-          />
+          <ActionButton icon={<IconComment />} action={() => null} />
+          <ActionButton icon={<IconRepeat />} action={() => null} />
+          <ActionButton icon={<IconHeart />} action={() => null} />
+          <ActionButton icon={<IconShare />} action={() => null} />
         </S.ActionsLeft>
 
         <S.ActionsRight>
-          <ActionButton
-            icon={<IconFlag />}
-            action={() => null}
-          />
+          <ActionButton icon={<IconFlag />} action={() => null} />
         </S.ActionsRight>
-
-      </div>
+      </S.Footer>
     </S.Wrapper>
   );
 }
