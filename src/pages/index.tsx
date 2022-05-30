@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -8,10 +8,19 @@ import * as S from './index.styles';
 
 import mockUsers from './api/users/mockUsers.json';
 
-import { Form, Post, UserProfile } from '@/components';
+import { Form, Tabs, Post, UserProfile } from '@/components';
+
+const types = ['all', 'following'];
+
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
+
+  const [tabActive, setTabActive] = useState(types[0]);
+
+  const onTabChange = useCallback((item: string) => {
+    setTabActive(item);
+  }, []);
 
   const submit = useCallback((text: string) => console.log(text), []);
 
@@ -49,7 +58,12 @@ const Home: NextPage = () => {
 
 
 
-          All / Following
+
+          <Tabs
+            items={types}
+            active={tabActive}
+            onClick={onTabChange}
+          />
 
           <Post
             text="This is my post!"

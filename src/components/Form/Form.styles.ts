@@ -4,11 +4,12 @@ export const Wrapper = styled.div`
   textarea {
     width: 100%;
     font-size: 1em;
-    padding: 0.5em;
+    padding: 0.7em;
     box-sizing: border-box;
     resize: none;
     border: 1px solid ${({ theme }) => theme.bg.input};
     border-radius: 10px;
+    outline-color: ${({ theme }) => theme.bg.outline};
   }
 `;
 

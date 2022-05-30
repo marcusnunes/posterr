@@ -14,6 +14,7 @@ const themes = {
     buttonHover: '#025ce2',
     input: '#cccccc',
     border: '#eeeeee',
+    outline: '#bbbbbb',
   }
 }
 

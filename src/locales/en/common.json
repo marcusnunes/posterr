@@ -1,6 +1,8 @@
 {
   "whats-happening": "What's happening?",
   "submit-button": "Send",
+  "tabs-all": "All",
+  "tabs-following": "Following",
   "joined-on": "joined on {{date}}",
   "posts": "Posts",
   "follow": "Follow",
