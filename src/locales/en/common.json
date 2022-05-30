@@ -1,6 +1,7 @@
 {
+  "whats-happening": "What's happening?",
+  "submit-button": "Send",
   "title": "Example with-next-translate",
   "powered": "Powered by",
-  "alt": "Vercel logo",
-  "variable-example": "Using a variable {{count}}"
+  "number-chars": "{{count}} chars"
 }

@@ -1,3 +1,4 @@
+import { useCallback } from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -6,10 +7,12 @@ import useTranslation from 'next-translate/useTranslation';
 import * as icons from '@/assets/icons';
 import * as S from './index.styles';
 
-import { Post } from '@/components';
+import { Form, Post } from '@/components';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
+
+  const submit = useCallback((text: string) => console.log(text), []);
 
   return (
     <S.Container>
@@ -26,8 +29,14 @@ const Home: NextPage = () => {
           </a>
         </Link>
         
+        <div style={{ width: '500px', maxWidth: '500px' }}>
+          
+          <div style={{ padding: '20px 0' }}>
+            <Form action={submit} />
+          </div>
 
-        <div style={{ width: '500px', maxWidth: '400px' }}>
+
+
           All / Following
 
           <Post
