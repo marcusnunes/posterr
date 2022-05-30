@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useCallback } from "react";
 import useTranslation from 'next-translate/useTranslation';
+import { Button } from '@/components';
 import { MAX_CHARS } from '@/config/constants';
 import * as S from "./Form.styles";
 
@@ -36,9 +37,11 @@ export default function Form({ action }: TForm) {
           {MAX_CHARS - text.length}
         </span>
 
-        <button type="submit" disabled={disabled}>
-          {t('common:submit-button')}
-        </button>
+        <Button
+          type="submit"
+          text={t('common:submit-button')}
+          disabled={disabled}
+        />
       </S.Footer>
       </form>
     </S.Wrapper>

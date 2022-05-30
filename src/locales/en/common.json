@@ -1,7 +1,9 @@
 {
   "whats-happening": "What's happening?",
   "submit-button": "Send",
-  "title": "Example with-next-translate",
-  "powered": "Powered by",
-  "number-chars": "{{count}} chars"
+  "joined-on": "joined on {{date}}",
+  "posts": "Posts",
+  "follow": "Follow",
+  "following": "Following",
+  "followers": "Followers"
 }

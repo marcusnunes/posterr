@@ -3,7 +3,6 @@ module.exports = {
   defaultLocale: 'en',
   pages: {
     '*': ['common'],
-    '/': ['home'],
   },
   loadLocaleFrom: (locale, namespace) =>
     require(`./src/locales/${locale}/${namespace}`),

@@ -17,8 +17,8 @@
     "createdAt": "2022-05-01T06:00:00",
     "user": {
       "id": 1,
-      "username": "marcus",
-      "photo": "https://randomuser.me/api/portraits/men/46.jpg"
+      "username": "johnny",
+      "photo": "https://randomuser.me/api/portraits/men/81.jpg"
     },
     "retweetBy": {
       "id": 2,

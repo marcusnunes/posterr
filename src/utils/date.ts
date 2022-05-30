@@ -9,3 +9,7 @@ dayjs.extend(utc);
 export function fromNow(time: string) {
   return dayjs(time).utc().locale('en').fromNow();
 }
+
+export function formatDate(time: string, format = 'MMMM DD, YYYY') {
+  return dayjs(time).utc().locale('en').format(format);
+}

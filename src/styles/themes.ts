@@ -1,18 +1,19 @@
 const themes = {
   colors: {
-    primary: '#0070f3',
+    primary: '#0d6efd',
   },
   text: {
     primary: '#050505',
     secondary: '#b2bac3',
+    button: '#ffffff',
   },
   bg: {
     primary: '#ffffff',
     secondary: '#eff0f5',
-    inset: '#ffffff',
-    input: 'rgba(65, 67, 78, 0.12)',
+    button: '#0d6efd',
+    buttonHover: '#025ce2',
+    input: '#cccccc',
     border: '#eeeeee',
-    placeholder: 'rgba(0, 0, 0, 0.11)',
   }
 }
 

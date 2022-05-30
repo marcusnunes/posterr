@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "username": "marcus",
-    "photo": "https://randomuser.me/api/portraits/men/46.jpg",
+    "username": "johnny",
+    "photo": "https://randomuser.me/api/portraits/men/81.jpg",
     "followers": 10,
     "following": 5,
     "posts": 1,

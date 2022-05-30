@@ -4,10 +4,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link';
 import useTranslation from 'next-translate/useTranslation';
-import * as icons from '@/assets/icons';
 import * as S from './index.styles';
 
-import { Form, Post } from '@/components';
+import mockUsers from './api/users/mockUsers.json';
+
+import { Form, Post, UserProfile } from '@/components';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
@@ -28,9 +29,20 @@ const Home: NextPage = () => {
             <img src="/logo.png" width="127" height="30" alt="logo" />
           </a>
         </Link>
+
         
         <div style={{ width: '500px', maxWidth: '500px' }}>
           
+          <UserProfile
+            key={mockUsers[0].id}
+            username={mockUsers[0].username}
+            photo={mockUsers[0].photo}
+            createdAt={mockUsers[0].createdAt}
+            posts={mockUsers[0].posts}
+            following={mockUsers[0].following}
+            followers={mockUsers[0].followers}
+          />
+        
           <div style={{ padding: '20px 0' }}>
             <Form action={submit} />
           </div>
@@ -53,58 +65,10 @@ const Home: NextPage = () => {
           />
         </div>
 
-        
-        <S.TitleDemo>Hmmm</S.TitleDemo>
-
-        
-
-        <S.Title>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-          {' '}
-          {t('common:powered')}
-        </S.Title>
-
-        <S.Description>
-          Get started by editing{' '}
-          <S.Code>pages/index.tsx</S.Code>
-        </S.Description>
-
-        <S.Grid>
-          <S.Card href="https://nextjs.org/docs">
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </S.Card>
-
-          <S.Card href="https://nextjs.org/learn">
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </S.Card>
-
-          <S.Card href="https://github.com/vercel/next.js/tree/canary/examples">
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </S.Card>
-
-          <S.Card href="https://vercel.com/new">
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </S.Card>
-        </S.Grid>
       </S.Main>
 
       <S.Footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <S.Logo>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </S.Logo>
-        </a>
+        &copy;{' '} 2022 - posterr
       </S.Footer>
     </S.Container>
   )
