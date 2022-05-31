@@ -6,7 +6,7 @@ describe('posterr', () => {
   it('displays the default posts', () => {
     cy.get('#posts div').should('have.length', 2);
 
-    cy.get('#posts div').first().should('have.text', 'Pay electric bill');
-    cy.get('#posts div').last().should('have.text', 'Walk the dog');
+    cy.get('#posts div').first().should('have.text', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua');
+    cy.get('#posts div').last().should('have.text', 'This is my first posterr');
   });
 });
