@@ -20,6 +20,6 @@ export const Tab = styled.button<TTab>`
   border-bottom: 2px solid ${({ active, theme }) => active
     ? theme.colors.primary
     : 'transparent'};
-
+  text-transform: lowercase;
 `;
 

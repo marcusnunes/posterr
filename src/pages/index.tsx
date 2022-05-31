@@ -7,21 +7,31 @@ import useTranslation from 'next-translate/useTranslation';
 import { Form, Layout, Modal, Tabs, Post } from '@/components';
 import { fetchPosts, fetchUser } from '@/services/api';
 import { TPost } from '@/types/TPosts';
-import { FEED_OPTIONS } from '@/config/constants';
+import { FEED, FEED_OPTIONS } from '@/config/constants';
 import * as S from './index.styles';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
 
   const router = useRouter();
+  const filter = String(router.query.id);
+  const activeFilter = filter === FEED_OPTIONS.FOLLOWING
+    ? FEED_OPTIONS.FOLLOWING
+    : FEED_OPTIONS.ALL
 
-  const [tabActive, setTabActive] = useState(FEED_OPTIONS[0]);
+  const [tabActive, setTabActive] = useState(activeFilter);
 
-  const { data: postsData, isValidating: postsLoading } = useSWR('/api/posts', fetchPosts);
-  const { data: userData, isValidating: userLoading } = useSWR(() => router.query.profile, fetchUser);
+  const { data: postsData, isValidating: postsLoading, error: postsError } = useSWR('/api/posts', fetchPosts);
+  const { data: userData, isValidating: userLoading, error: userError } = useSWR(() => router.query.profile, fetchUser);
 
   const onTabChange = useCallback((item: string) => {
     setTabActive(item);
+
+    const newRoute = item === FEED_OPTIONS.FOLLOWING
+      ? '/following'
+      : '/';
+
+    router.push('/', newRoute, { shallow: true });
   }, []);
 
   const onCloseModal = useCallback(() => {
@@ -44,7 +54,7 @@ const Home: NextPage = () => {
         </S.FormContainer>
 
         <Tabs
-          items={FEED_OPTIONS}
+          items={FEED}
           active={tabActive}
           onClick={onTabChange}
         />

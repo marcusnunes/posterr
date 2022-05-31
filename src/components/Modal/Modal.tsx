@@ -22,7 +22,7 @@ export default function Modal({ data, loading, isOpen, onClose }: TModal) {
       style={
         {
           content: {
-            top: '50%',
+            top: '45%',
             left: '50%',
             right: 'auto',
             bottom: 'auto',
