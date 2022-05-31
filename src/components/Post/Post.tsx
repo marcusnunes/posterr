@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from "next/link";
 import Image from 'next/image';
 import { ActionButton } from '@/components';
 import { fromNow } from '@/utils/date';
@@ -22,12 +23,20 @@ type TPost = {
 export default function Post({ text, createdAt, username, photo }: TPost) {
   return (
     <S.Wrapper>
-     <S.Container>
-        <Image src={photo} alt="photo" width="40" height="40" />
+      <S.Container>
+        <Link href={`/?profile=${username}`} as={`/profile/${username}`} shallow>
+          <a>
+            <Image src={photo} alt="photo" width="40" height="40" />
+          </a>
+        </Link>
         
         <S.UserInfo>
           <div>
-            <strong>@{username}</strong>
+            <Link href={`/?profile=${username}`} as={`/profile/${username}`} shallow>
+              <a>
+                <strong>@{username}</strong>
+              </a>
+            </Link>
             <span>{fromNow(createdAt)}</span>
           </div>
         </S.UserInfo>

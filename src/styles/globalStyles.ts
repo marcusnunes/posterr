@@ -17,6 +17,10 @@ export const GlobalStyles = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
+
+  a:hover {
+    text-decoration: underline;
+  }
 `;
 
 export default GlobalStyles;

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { TPost } from '../../../types/TPosts';
+import { TPost } from '@/types/TPosts';
 import mockPosts from './mockPosts.json';
 
 export default function handler(

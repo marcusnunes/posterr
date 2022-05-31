@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { TUser } from '../../../types/TUsers';
+import { TUser } from '@/types/TUsers';
 import mockUsers from './mockUsers.json';
 
 export default function handler(

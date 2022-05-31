@@ -2,7 +2,7 @@
   {
     "id": 2,
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
-    "createdAt": "2022-05-01T07:00:00",
+    "createdAt": "2022-03-01T07:00:00",
     "user": {
       "id": 2,
       "username": "anna",
@@ -14,7 +14,7 @@
   {
     "id": 1,
     "text": "This is my first posterr",
-    "createdAt": "2022-05-01T06:00:00",
+    "createdAt": "2022-01-01T06:00:00",
     "user": {
       "id": 1,
       "username": "johnny",
@@ -22,11 +22,13 @@
     },
     "retweetBy": {
       "id": 2,
-      "username": "anna"
+      "username": "anna",
+      "photo": "https://randomuser.me/api/portraits/women/79.jpg"
     },
     "replyingTo": {
       "id": 3,
-      "username": "sarah"
+      "username": "sarah",
+      "photo": "https://randomuser.me/api/portraits/women/76.jpg"
     }
   }
 ]

@@ -1,6 +1,9 @@
 export { default as ActionButton } from './ActionButton';
 export { default as Button } from './Button';
 export { default as Form } from './Form';
+export { default as Footer } from './Footer';
+export { default as Modal } from './Modal';
+export { default as Nav } from './Nav';
 export { default as Post } from './Post';
 export { default as Tabs } from './Tabs';
 export { default as UserProfile } from './UserProfile';

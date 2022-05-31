@@ -1,6 +1,8 @@
 {
+  "title": "posterr",
   "whats-happening": "What's happening?",
   "submit-button": "Send",
+  "loading": "Loading",
   "tabs-all": "All",
   "tabs-following": "Following",
   "joined-on": "joined on {{date}}",
