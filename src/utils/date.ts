@@ -13,3 +13,7 @@ export function fromNow(time: string) {
 export function formatDate(time: string, format = 'MMMM DD, YYYY') {
   return dayjs(time).utc().locale('en').format(format);
 }
+
+export function currentDate() {
+  return dayjs().format('YYYY-MM-DDTHH:mm:ss'); 
+}
