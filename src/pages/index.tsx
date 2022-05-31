@@ -1,22 +1,21 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import type { NextPage } from 'next'
 import { useRouter } from "next/router";
 import Head from 'next/head'
 import useSWR from "swr";
 import useTranslation from 'next-translate/useTranslation';
-import { Form, Footer, Modal, Nav, Tabs, Post, UserProfile } from '@/components';
+import { Form, Layout, Modal, Tabs, Post } from '@/components';
 import { fetchPosts, fetchUser } from '@/services/api';
 import { TPost } from '@/types/TPosts';
+import { FEED_OPTIONS } from '@/config/constants';
 import * as S from './index.styles';
 
-const types = ['all', 'following'];
-
 const Home: NextPage = () => {
-  const router = useRouter();
-
   const { t } = useTranslation();
 
-  const [tabActive, setTabActive] = useState(types[0]);
+  const router = useRouter();
+
+  const [tabActive, setTabActive] = useState(FEED_OPTIONS[0]);
 
   const { data: postsData, isValidating: postsLoading } = useSWR('/api/posts', fetchPosts);
   const { data: userData, isValidating: userLoading } = useSWR(() => router.query.profile, fetchUser);
@@ -29,52 +28,47 @@ const Home: NextPage = () => {
     router.push('/', undefined, { shallow: true });
   }, []);
 
-  const submit = useCallback((text: string) => console.log(text), []);
+  const onSubmit = useCallback((text: string) => console.log(text), []);
 
   return (
-    <S.Container>
-      <Head>
-        <title>{t('common:title')}</title>
-        <meta name="description" content={t('common:title')} />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout>
+      <>
+        <Head>
+          <title>{t('common:title')}</title>
+          <meta name="description" content={t('common:title')} />
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
 
-      <S.Main>
-        <Nav />
+        <S.FormContainer>
+          <Form action={onSubmit} />
+        </S.FormContainer>
 
-        <div style={{ maxWidth: '500px' }}>
-          <div style={{ padding: '20px 0' }}>
-            <Form action={submit} />
-          </div>
+        <Tabs
+          items={FEED_OPTIONS}
+          active={tabActive}
+          onClick={onTabChange}
+        />
 
-          <Tabs
-            items={types}
-            active={tabActive}
-            onClick={onTabChange}
+        {postsLoading ? (
+          <div>{t('common:loading')}</div>
+        ) : postsData?.map((data: TPost) => (
+          <Post
+            key={data.id}
+            text={data.text}
+            createdAt={data.createdAt}
+            username={data.user.username}
+            photo={data.user.photo}
           />
-
-          {postsLoading ? (
-            <div>{t('common:loading')}</div>
-          ) : postsData?.map((data: TPost) => (
-            <Post
-              key={data.id}
-              text={data.text}
-              createdAt={data.createdAt}
-              username={data.user.username}
-              photo={data.user.photo}
-            />
-          ))}
-        </div>
-
+        ))}
+        
         <Modal
           data={userData}
           loading={userLoading}
           isOpen={!!router.query.profile}
           onClose={onCloseModal}
         />
-      </S.Main>
-      <Footer />
-    </S.Container>
+      </>
+    </Layout>
   )
 }
 
