@@ -56,11 +56,11 @@ const Home: NextPage = () => {
     setTabActive(item);
 
     router.push(`/?id=${item}`, newRoute, { shallow: true });
-  }, [router.query]);
+  }, [router, retrieveAllPosts, retrieveFollowingPosts]);
 
   const onCloseModal = useCallback(() => {
     router.push('/', undefined, { shallow: true });
-  }, []);
+  }, [router]);
 
   const onSubmit = useCallback((text: string) => {
     const payload = {
@@ -81,7 +81,7 @@ const Home: NextPage = () => {
     if (postsData) {
       retrieveAllPosts();
     }
-  }, [postsData]);
+  }, [postsData, retrieveAllPosts]);
 
   return (
     <Layout>
