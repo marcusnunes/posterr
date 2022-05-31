@@ -102,17 +102,19 @@ const Home: NextPage = () => {
           onClick={onTabChange}
         />
 
-        {postsLoading ? (
-          <div>{t('common:loading')}</div>
-        ) : posts.map((data: TPost) => (
-          <Post
-            key={data.id}
-            text={data.text}
-            createdAt={data.createdAt}
-            username={data.user.username}
-            photo={data.user.photo}
-          />
-        ))}
+        <div id="posts">
+          {postsLoading ? (
+            <div>{t('common:loading')}</div>
+          ) : posts.map((data: TPost) => (
+            <Post
+              key={data.id}
+              text={data.text}
+              createdAt={data.createdAt}
+              username={data.user.username}
+              photo={data.user.photo}
+            />
+          ))}
+        </div>
         
         <Modal
           data={userData}

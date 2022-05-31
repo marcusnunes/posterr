@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Posterr
 
-## Getting Started
+Posterr is very similar to Twitter, but with fewer features.
 
-First, run the development server:
+### Getting started
 
 ```bash
-npm run dev
+yarn && yarn dev
 # or
-yarn dev
+npm install && npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. That's it!
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+### Cool stuff
+Lint
+```bash
+yarn lint
+# or
+npm run lint
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Unit Tests
+```bash
+yarn test
+# or
+npm run test
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+E2E Tests
+```bash
+yarn cypress
+# or
+npm run cypress
+```
 
-## Learn More
+### Technologies
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js / React.js
+- Styled Components
+- SWR
+- Next Translate
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Planning
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+The Product Manager wants to implement a new feature called "reply-to-post". 
+##### Questions:
 
-## Deploy on Vercel
+- Do we already have the design of these scenarios?
+- What are the new fields I need to send to the backend?
+- How does the backend return the data for this new post type?
+- Do we have any api to search for usernames?
+- Do we have any rules for tagging users? Any markup limits?
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+##### How I would solve this problem?
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Add a listener for the "@" character
+- Fetch users that match what is being typed using regex
+- Would add a debounce in the users search
+- Notify the user in real time with websockets
+### Critique
+
+What could have been improved with more time?
+
+- Finish the core features (follow user, reply, mentions and quotes).
+- Would separate the logic of the components with custom hooks.
+- Fix some bugs.
+- Add redux to manage state.
+- Add more unit tests and E2E.
+- Implement Server Side Rendering.
+
+What about scaling?
+
+- The list of posts I'm following would be the first thing to give trouble. Ideally, the API should bring these results to remove all the filter logic from the frontend.
+- Using localstorage to store posts is not ideal.
+- Would add some pagination too.

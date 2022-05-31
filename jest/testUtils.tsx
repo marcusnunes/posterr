@@ -1,7 +1,7 @@
-import React, { FC, ReactElement } from 'react'
-import { render, RenderOptions} from '@testing-library/react'
+import React, { FC, ReactElement } from 'react';
+import { render, RenderOptions} from '@testing-library/react';
 import { ThemeProvider } from 'styled-components';
-import I18nProvider from 'next-translate/I18nProvider'
+import I18nProvider from 'next-translate/I18nProvider';
 import themes from '@/styles/themes';
 import common from '@/locales/en/common.json';
 
@@ -18,7 +18,7 @@ const Providers: FC<{children: React.ReactNode}> = ({children}) => {
 const customRender = (
   ui: ReactElement,
   options?: Omit<RenderOptions, 'wrapper'>,
-) => render(ui, {wrapper: Providers, ...options})
+) => render(ui, {wrapper: Providers, ...options});
 
-export * from '@testing-library/react'
+export * from '@testing-library/react';
 export {customRender as render}
